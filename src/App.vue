@@ -1,11 +1,17 @@
 <template>
   <div id="q-app">
+    <!-- <h1 class="bg-green"><br><br><br><br><br>{{v1}}</h1> -->
     <router-view />
   </div>
 </template>
 <script>
 export default {
-  name: 'App',
+  data () {
+    return {
+      // v1: null,
+      // v2: null
+    }
+  },
   mounted () {
     this.$store.commit('window/updateWindowWidth', window.innerWidth)
     this.$store.commit('window/updateWindowHeight', window.innerHeight)
@@ -18,10 +24,32 @@ export default {
   },
   methods: {
     onResize () {
+      // this.width(window.innerWidth)
+      // this.height(window.innerHeight)
       this.$store.commit('window/updateWindowWidth', window.innerWidth)
       this.$store.commit('window/updateWindowHeight', window.innerHeight)
     }
   }
+  // watch: {
+  //   width: {
+  //     get () {
+  //       return this.v1
+  //     },
+  //     set (val) {
+  //       this.v1 = val
+  //       this.$store.commit('window/updateWindowWidth', val)
+  //     }
+  //   },
+  //   height: {
+  //     get () {
+  //       return this.v2
+  //     },
+  //     set (val) {
+  //       this.v2 = val
+  //       this.$store.commit('window/updateWindowHeight', val)
+  //     }
+  //   }
+  // }
 }
 </script>
 
@@ -43,7 +71,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .logo {
-  height: 26px;
+  height: 16px;
 }
 
 .logo-mini {
@@ -55,18 +83,17 @@ body::-webkit-scrollbar-thumb {
 }
 
 .img-slide {
+  /* height: 300px; */
   height: 50vw;
 }
 
+.img-slide-cardapio {
+  /* height: 200px; */
+  height: 30vw;
+}
 .img-section {
-  height: 9vw;
-  /* width: 20vw; */
-  /* text-align: center; */
-  /* width: 50vw; */
-  /* height: 680px;
-  background: url('./assets/frames/android.png') center top no-repeat;
-  background-size: 340px;
-  margin: 0 auto 0; */
+  height: 200px;
+  /* height: 11vw; */
 }
 
 .footer-logo {
@@ -79,5 +106,13 @@ body::-webkit-scrollbar-thumb {
 
 .containerSizeTransition {
   transition: width .3s, height .3s;
+}
+
+.selectDisable {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 </style>

@@ -1,575 +1,897 @@
 <template>
-  <!-- <q-page class="flex flex-center"> -->
-    <div>
-<!-- <ul id="menu" class="q-pa-none">
-
-  <q-toolbar class="bg-red">oi oi
-  </q-toolbar>
-<q-tabs class="q-pa-none" narrow-indicator :breakpoint="0" no-caps>
-          <div class="q-pl-sm"></div>
-          <q-btn
-            @click="moveTo(1)"
-            push
-            label="Início"
-            class="navigation-btn bg-light-blue-9"
-            style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-            v-if="$q.screen.gt.sm" name="home"
-
-          />
-          <div class="q-pl-sm"></div>
-          <q-btn
-            @click="moveTo(2)"
-            push
-            label="Sobre"
-            class="navigation-btn bg-light-blue-9"
-            style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-            v-if="$q.screen.gt.sm" name="about"
-          />
-          <div class="q-pl-sm"></div>
-          <q-btn
-            @click="moveTo(3)"
-            push
-            label="Serviços"
-            class="navigation-btn bg-light-blue-9"
-            style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-            v-if="$q.screen.gt.sm" name="services"
-          />
-      <div class="q-pl-sm"></div>
-      <q-btn @click="moveTo(4)"
-
-               push
-        label="Dúvidas"
-        class="navigation-btn bg-light-blue-9"
-        style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-        v-if="$q.screen.gt.sm" name="doubts"
+  <q-page class="flex flex-center">
+    <!-- <ul v-if="$q.screen.gt.sm" id="menu" style="background-color: #e80001;">
+      <div class="row wrap">
+        <div class="col q-pl-sm q-pt-sm q-pb-xs">
+          <img @click=selectDisable "$q.dark.toggle()" class="logo text-left"
+            :src="$q.dark.isActive ? require('../assets/logo/mcdonalds-logo.png') : require('../assets/logo/mcdonalds-logo.png')">
+        </div>
+        <div class="col-11.5 text-right">
+          <li data-menuanchor="page1" @click="$refs.fullpage.api.moveTo(1,0)" class="active"><a href="#page1">Cardápio</a></li>
+          <li data-menuanchor="page2" @click="$refs.fullpage.api.moveTo(2,0)"><a href="#page2">McOferta</a></li>
+          <li data-menuanchor="page3" @click="$refs.fullpage.api.moveTo(3,0)"><a href="#page3">Picanha das Galáxias</a></li>
+          <li data-menuanchor="page4" @click="$refs.fullpage.api.moveTo(4,0)"><a href="#page4">Sanuíches de Carne</a></li>
+          <li data-menuanchor="page5" @click="$refs.fullpage.api.moveTo(5,0)"><a href="#page5">Sanduíches de Frango</a></li>
+          <li data-menuanchor="page6" @click="$refs.fullpage.api.moveTo(6,0)"><a href="#page6">Acompanhamentos</a></li>
+          <li data-menuanchor="page7" @click="$refs.fullpage.api.moveTo(7,0)"><a href="#page7">Bebidas</a></li>
+        </div>
+      </div>
+    </ul> -->
+    <!-- <ul class="actions">
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,0)">Início
+      </li>
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,1)">Página 1
+      </li>
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,2)">Página 2
+      </li>
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,3)">Página 3
+      </li>
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,4)">Página 4
+      </li>
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,5)">Página 5
+      </li>
+      <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,6)">Página 6
+      </li>
+    </ul> -->
+    <full-page id="fullpage" ref="fullpage" :options="options">
+      <!-- 1 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big mac.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+            </div>
+          </div>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-12 col-sm-6">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(4,1)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+            </div>
+          </div>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(4,2)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(4,3)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/carne/big mac.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(5,1)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(5,2)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+            </div>
+          </div>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(5,3)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(6,1)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(6,2)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(6,3)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+            </div>
+          </div>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(7,1)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+            </div>
+            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(7,2)">
+              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 2 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <q-carousel
+                class="q-pb-xl q-px-none"
+                style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+                swipeable
+                animated
+                v-model="slide"
+                thumbnails
+                infinite
+              >
+                <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')" />
+                <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')" />
+                <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')" />
+                <q-carousel-slide :name="4" :img-src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')" />
+                <q-carousel-slide :name="5" :img-src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')" />
+                <q-carousel-slide :name="6" :img-src="require('../assets/mcdonalds/carne/big mac.png')" />
+                <q-carousel-slide :name="7" :img-src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')" />
+                <q-carousel-slide :name="8" :img-src="require('../assets/mcdonalds/frango/mcchicken.png')" />
+                <q-carousel-slide :name="9" :img-src="require('../assets/mcdonalds/frango/extra chicken.png')" />
+              </q-carousel>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <q-carousel
+                class="q-pb-xl q-px-none"
+                style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+                swipeable
+                animated
+                v-model="slide2"
+                thumbnails
+                infinite
+              >
+                <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')" />
+                <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')" />
+                <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')" />
+              </q-carousel>
+            </div>
+            <div class="col-xs-1 col-sm-1 col-md-1">
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3">
+              <q-carousel
+                class="q-pb-xl q-px-none"
+                style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+                swipeable
+                animated
+                v-model="slide3"
+                thumbnails
+                infinite
+              >
+                <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/bebidas/refrigerantes.png')" />
+                <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/bebidas/mcshake.png')" />
+              </q-carousel>
+            </div>
+          </div>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <q-carousel
+            class="q-pb-xl q-px-none q-ma-none"
+            style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+            swipeable
+            animated
+            v-model="slide"
+            thumbnails
+            infinite
+          >
+              <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')" />
+              <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')" />
+              <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')" />
+              <q-carousel-slide :name="4" :img-src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')" />
+              <q-carousel-slide :name="5" :img-src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')" />
+              <q-carousel-slide :name="6" :img-src="require('../assets/mcdonalds/carne/big mac.png')" />
+              <q-carousel-slide :name="7" :img-src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')" />
+              <q-carousel-slide :name="8" :img-src="require('../assets/mcdonalds/frango/mcchicken.png')" />
+              <q-carousel-slide :name="9" :img-src="require('../assets/mcdonalds/frango/extra chicken.png')" />
+          </q-carousel>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <q-carousel
+            class="q-pb-xl q-px-none q-ma-none"
+            style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+            swipeable
+            animated
+            v-model="slide2"
+            thumbnails
+            infinite
+          >
+            <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')" />
+            <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')" />
+            <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')" />
+          </q-carousel>
+        </div>
+        <div v-if="$q.screen.lt.md" class="slide text-center">
+          <q-carousel
+            class="q-pb-xl q-px-none q-ma-none"
+            style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
+            swipeable
+            animated
+            v-model="slide3"
+            thumbnails
+            infinite
+          >
+            <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/bebidas/refrigerantes.png')" />
+            <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/bebidas/mcshake.png')" />
+          </q-carousel>
+        </div>
+      </div>
+      <!-- 3 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+            </div>
+          </div>
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big mac.png')">
+            </div>
+          </div>
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/carne/big mac.png')">
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+            </div>
+          </div>
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,3)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+            </div>
+          </div>
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+        </div>
+      </div>
+      <!-- 7 -->
+      <div class="section">
+        <div v-if="$q.screen.gt.sm" class="slide text-center">
+          <div class="row wrap justify-center items-center content-center">
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,1)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+            </div>
+            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,2)">
+              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+            </div>
+          </div>
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+        </div>
+        <div class="slide text-center">
+          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+        </div>
+      </div>
+    </full-page>
+    <q-page-sticky position="top-right" :offset="[10, 10]">
+      <q-tabs narrow-indicator :breakpoint="0" no-caps>
+        <!-- btn 1 -->
+        <q-btn
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(1,0)"
+          push
+          label="Cardápio"
+          class="d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
         />
-      <q-btn-dropdown class="bg-light-blue-9 q-py-xs q-px-none" :content-style="{ backgroundColor: '#ff000000' }"
-        style="border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;"
-        size="md"
-          push no-caps v-if="$q.screen.lt.md" auto-close dropdown-icon="mdi-menu-down" :loading="loading" label="Pages">
-        <q-list class="q-pa-none q-ma-none fit column wrap justify-center">
-          <q-item
-          class="q-pt-xs q-pb-none q-px-none" clickable>
-            <q-btn @click="moveTo(1)" size="12px"
-              push style="width:100%; border-top-left-radius: 0px; border-top-right-radius: 0px;
-              border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;" class="bg-light-blue-9 text-white" label="Home" />
-            </q-item>
+        <!-- btn 2 -->
+        <q-btn
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(2,0)"
+          push
+          label="McOferta"
+          class="d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
 
-            <q-item
-            class="q-pt-xs q-pb-none q-px-none" clickable >
-              <q-btn @click="moveTo(2)" size="12px"
-                push style="width:100%; border-top-left-radius: 0px; border-top-right-radius: 0px;
-                border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;" class="bg-light-blue-9 text-white" label="Serviços" />
+        />
+        <!-- btn 3 -->
+        <q-btn-dropdown
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(3,0)"
+          @mouseover.native="menuOver3 = true"
+          @mouseout.native="menuOver3 = false"
+          v-model="menu3"
+          label="Picanha das Galáxias"
+          class="without-icon d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
+          :content-style="{ backgroundColor: '#fec401' }"
+          push
+          ripple
+          auto-close
+        >
+          <q-list @mouseover.native="listOver3 = true" @mouseout.native="listOver3 = false">
+            <q-item @click="$refs.fullpage.api.moveTo(3,1)" clickable>
+              <q-item-section>
+                <q-item-label>picanha clubhouse 1 carne</q-item-label>
+              </q-item-section>
             </q-item>
-
-            <q-item
-            class="q-pt-xs q-pb-none q-px-none" clickable >
-              <q-btn @click="moveTo(3)" size="12px"
-                push style="width:100%; border-top-left-radius: 0px; border-top-right-radius: 0px;
-                border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;" class="bg-light-blue-9 text-white" label="Sobre" />
+            <q-item @click="$refs.fullpage.api.moveTo(3,2)" clickable>
+              <q-item-section>
+                <q-item-label>picanha clubhouse 2 carnes</q-item-label>
+              </q-item-section>
             </q-item>
-
+            <q-item @click="$refs.fullpage.api.moveTo(3,3)" clickable>
+              <q-item-section>
+                <q-item-label>McPicanha</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <!-- btn 4 -->
+        <q-btn-dropdown
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(4,0)"
+          @mouseover.native="menuOver4 = true"
+          @mouseout.native="menuOver4 = false"
+          v-model="menu4"
+          label="Sanuíches de Carne"
+          class="without-icon d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
+          :content-style="{ backgroundColor: '#fec401' }"
+          push
+          ripple
+          auto-close
+        >
+          <q-list @mouseover.native="listOver4 = true" @mouseout.native="listOver4 = false">
+            <q-item @click="$refs.fullpage.api.moveTo(4,1)" clickable>
+              <q-item-section>
+                <q-item-label>big tasty turbo queijo</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(4,2)" clickable>
+              <q-item-section>
+                <q-item-label>Duplo Cheddar McMelt</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(4,3)" clickable>
+              <q-item-section>
+                <q-item-label>Big Mac</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <!-- btn 5 -->
+        <q-btn-dropdown
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(5,0)"
+          @mouseover.native="menuOver5 = true"
+          @mouseout.native="menuOver5 = false"
+          v-model="menu5"
+          label="Sanduíches de Frango"
+          class="without-icon d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
+          :content-style="{ backgroundColor: '#fec401' }"
+          push
+          ripple
+          auto-close
+        >
+          <q-list @mouseover.native="listOver5 = true" @mouseout.native="listOver5 = false">
+            <q-item @click="$refs.fullpage.api.moveTo(5,1)" clickable>
+              <q-item-section>
+                <q-item-label>Chicken Supreme Crispy</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(5,2)" clickable>
+              <q-item-section>
+                <q-item-label>McChicken</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(5,3)" clickable>
+              <q-item-section>
+                <q-item-label>Extra Chicken</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <!-- btn 6 -->
+        <q-btn-dropdown
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(6,0)"
+          @mouseover.native="menuOver6 = true"
+          @mouseout.native="menuOver6 = false"
+          v-model="menu6"
+          label="Acompanhamentos"
+          class="without-icon d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
+          :content-style="{ backgroundColor: '#fec401' }"
+          push
+          ripple
+          auto-close
+        >
+          <q-list @mouseover.native="listOver6 = true" @mouseout.native="listOver6 = false">
+            <q-item @click="$refs.fullpage.api.moveTo(6,1)" clickable>
+              <q-item-section>
+                <q-item-label>McNuggets</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(6,2)" clickable>
+              <q-item-section>
+                <q-item-label>McFritas</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(6,3)" clickable>
+              <q-item-section>
+                <q-item-label>McFritas Cheddar</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <!-- btn 7 -->
+        <q-btn-dropdown
+          v-if="$q.screen.gt.sm"
+          @click="$refs.fullpage.api.moveTo(7,0)"
+          @mouseover.native="menuOver7 = true"
+          @mouseout.native="menuOver7 = false"
+          v-model="menu7"
+          label="Bebidas"
+          class="without-icon d-button navigation-btn btn-slide-line"
+          style="background-color: #bd0000;"
+          :content-style="{ backgroundColor: '#fec401' }"
+          push
+          ripple
+          auto-close
+        >
+          <q-list @mouseover.native="listOver7 = true" @mouseout.native="listOver7 = false">
+            <q-item @click="$refs.fullpage.api.moveTo(7,1)" clickable>
+              <q-item-section>
+                <q-item-label>Refrigerantes</q-item-label>
+              </q-item-section>
+            </q-item>
+            <q-item @click="$refs.fullpage.api.moveTo(7,2)" clickable>
+              <q-item-section>
+                <q-item-label>McShacke</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-btn-dropdown>
+        <!-- btn 7 -->
+        <q-btn-dropdown
+          v-if="$q.screen.lt.md"
+          class="q-py-xs q-px-none text-white"
+          :content-style="{ backgroundColor: '#ff000000' }"
+          size="md"
+          style="background-color: #bd0000;"
+          push no-caps auto-close dropdown-icon="mdi-menu-down" :loading="loading" label="Páginas"
+        >
+          <q-list flat border="false" class="q-pa-none q-ma-none fit column wrap justify-center">
             <q-item
-            class="q-pt-xs q-pb-none q-px-none" clickable >
-              <q-btn @click="moveTo(4)" size="12px"
-                push style="width:100%; border-top-left-radius: 0px; border-top-right-radius: 0px;
-                border-bottom-left-radius: 0px; border-bottom-right-radius: 0px;" class="bg-light-blue-9 text-white" label="Dúvidas" />
+              @click="$refs.fullpage.api.moveTo(1,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="Cardápio"
+              />
+            </q-item>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(2,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="McOferta"
+              />
+            </q-item>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(3,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="Picanha das Galáxias"
+              />
+            </q-item>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(4,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="Sanuíches de Carne"
+              />
+            </q-item>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(5,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="Sanduíches de Frango"
+              />
+            </q-item>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(6,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="Acompanhamentos"
+              />
+            </q-item>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(7,0)"
+              class="q-pt-xs q-pb-none q-px-none"
+              clickable
+            >
+              <q-btn
+                size="12px"
+                push
+                class="text-white"
+                style="width:100%; background-color: #bd0000;"
+                label="Bebidas"
+              />
             </q-item>
           </q-list>
         </q-btn-dropdown>
       </q-tabs>
-</ul> -->
-      <ul id="menu" class="q-pa-xl bg-red">
-        <li data-menuanchor="page1" @click="moveTo(1)" class="active"><a href="#page1">Section 1</a></li>
-        <li data-menuanchor="page2" @click="moveTo(2)"><a href="#page2">Section 2</a></li>
-        <li data-menuanchor="page3" @click="moveTo(3)"><a href="#page3">Section 3</a></li>
-        <li data-menuanchor="page4" @click="moveTo(4)"><a href="#page4">Section 4</a></li>
-        <li data-menuanchor="page5" @click="moveTo(5)"><a href="#page5">Section 5</a></li>
-      </ul>
-      <ul class="actions">
-        <li>
-            <a class="actions-button" href="#" rel="noopener" @click="addSection">Add section</a>
-        </li>
-        <li>
-            <a class="actions-button" href="#" rel="noopener" @click="removeSection">Remove section</a>
-        </li>
-        <li>
-            <a class="actions-button" href="#" rel="noopener" @click="addSlide">Add slide</a>
-        </li>
-        <li>
-            <a class="actions-button" href="#" rel="noopener" @click="removeSlide">Remove slide</a>
-        </li>
-        <li>
-            <a class="actions-button" href="#" rel="noopener" @click="toggleNavigation">Toggle nav</a>
-        </li>
-        <li>
-            <a class="actions-button" href="#" rel="noopener" @click="toggleScrollbar">Toggle scrollBar</a>
-        </li>
-      </ul>
-                      <!-- {{ $store.state.window.windowWidth }} -->
-      <full-page id="fullpage" ref="fullpage" :options="options">
-        <!-- <div class="section">
-            <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start">
-              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-                <q-card>
-                  <img :src="require('../assets/astronauta.gif')">
-                {{ $store.state.window.windowWidth }}
-                  <q-card-section>
-                    <div class="text-overline text-orange-9">Android & iOS</div>
-                    <div class="text-h6">Dispositivos Mobile</div>
-                    <div class="text-subtitle2">por Kevin Kobori</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    Projeto 100% compatível com dispositivos mobile. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-                    é possível exporta-lo tanto para dispositivos que utilizam Android quanto iOS. O aplicativo pode ser instalado tanto localmente(sem a necessidade
-
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    <strong>Ex: Smartphones e Tablets / iPhones e iPads.</strong>
-                  </q-card-section>
-                  <br>
-                  <q-separator inset />
-
-                  <q-card-section align="right">
-                    <q-btn outline>Saiba Mais</q-btn>
-                  </q-card-section>
-                </q-card>
-              </div>
-
-              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-                <q-card>
-                  <img :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-
-                  <q-card-section>
-                    <div class="text-overline text-orange-9">Windows & Mac OSX</div>
-                    <div class="text-h6">Sistemas Operacionais</div>
-                    <div class="text-subtitle2">por Kevin Kobori</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    Projeto 100% compatível com a sua área de trabalho. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-                    é possível exporta-lo para aplicações locais. O aplicativo pode ser instalado tanto localmente quanto divulgado para download local para seus clientes.
-
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-                  </q-card-section>
-
-                  <q-separator inset />
-
-                  <q-card-section align="right">
-                    <q-btn outline>Saiba Mais</q-btn>
-                  </q-card-section>
-                </q-card>
-              </div>
-
-              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-                <q-card>
-                  <img :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-
-                  <q-card-section>
-                    <div class="text-overline text-orange-9">Chrome, Safari, Firefox...</div>
-                    <div class="text-h6">Navegadores Web</div>
-                    <div class="text-subtitle2">por Kevin Kobori</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    Projeto 100% compatível com dispositivos mobile. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-                    é possível exporta-la tanto para dispositivos que utilizam Android quanto iOS. O aplicativo pode ser instalado tanto localmente(sem a necessidade
-
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-                  </q-card-section>
-
-                  <q-separator inset />
-
-                  <q-card-section align="right">
-                    <q-btn outline>Saiba Mais</q-btn>
-                  </q-card-section>
-                </q-card>
-              </div>
-          </div>
-          <div class="$store.state.window.windowWidth < 800 ? 'slide' : ''">
-            <div class="transparent q-pa-md text-justify row wrap justify-center items-start content-start">
-              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-                <q-card>
-                  <img :src="require('../assets/astronauta.gif')">
-                {{ $store.state.window.windowWidth }}
-                  <q-card-section>
-                    <div class="text-overline text-orange-9">Android & iOS</div>
-                    <div class="text-h6">Dispositivos Mobile</div>
-                    <div class="text-subtitle2">por Kevin Kobori</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    Projeto 100% compatível com dispositivos mobile. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-                    é possível exporta-lo tanto para dispositivos que utilizam Android quanto iOS. O aplicativo pode ser instalado tanto localmente(sem a necessidade
-
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    <strong>Ex: Smartphones e Tablets / iPhones e iPads.</strong>
-                  </q-card-section>
-                  <br>
-                  <q-separator inset />
-
-                  <q-card-section align="right">
-                    <q-btn outline>Saiba Mais</q-btn>
-                  </q-card-section>
-                </q-card>
-              </div>
-            </div>
-            <div :class="$store.state.window.windowWidth < 800 ? 'slide' : ''">
-              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-                <q-card>
-                  <img :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-
-                  <q-card-section>
-                    <div class="text-overline text-orange-9">Windows & Mac OSX</div>
-                    <div class="text-h6">Sistemas Operacionais</div>
-                    <div class="text-subtitle2">por Kevin Kobori</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    Projeto 100% compatível com a sua área de trabalho. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-                    é possível exporta-lo para aplicações locais. O aplicativo pode ser instalado tanto localmente quanto divulgado para download local para seus clientes.
-
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-                  </q-card-section>
-
-                  <q-separator inset />
-
-                  <q-card-section align="right">
-                    <q-btn outline>Saiba Mais</q-btn>
-                  </q-card-section>
-                </q-card>
-              </div>
-            </div>
-            <div :class="$store.state.window.windowWidth < 800 ? 'slide' : ''">
-              <div class="q-pa-md col-xs-12 col-sm-6 col-md-4" style="max-width:415px">
-                <q-card>
-                  <img :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-
-                  <q-card-section>
-                    <div class="text-overline text-orange-9">Chrome, Safari, Firefox...</div>
-                    <div class="text-h6">Navegadores Web</div>
-                    <div class="text-subtitle2">por Kevin Kobori</div>
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    Projeto 100% compatível com dispositivos mobile. Uma vez feito a lógica do código utilizando Javascript, Html e CSS com a ajuda da Framework VueJS
-                    é possível exporta-la tanto para dispositivos que utilizam Android quanto iOS. O aplicativo pode ser instalado tanto localmente(sem a necessidade
-
-                  </q-card-section>
-
-                  <q-card-section class="q-pt-none">
-                    <strong>Ex: um botão, um card, uma caixa de texto, utilizados com frequencia durante o desenvolvimento de toda a aplicação.</strong>
-                  </q-card-section>
-
-                  <q-separator inset />
-
-                  <q-card-section align="right">
-                    <q-btn outline>Saiba Mais</q-btn>
-                  </q-card-section>
-                </q-card>
-              </div>
-            </div>
-          </div> -->
-          <!-- <div class="slide">
-            <h3>Slide 1.2</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 1.3</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 1.4</h3>
-          </div>
-          <h3>Section 1</h3> -->
-        <!-- </div> -->
-        <!-- <div class="q-pt-xl"></div> -->
-        <div class="section">
-          <div class="text-center q-pa-xs">
-            <div :class="$store.state.window.windowWidth < 800 ? '' : 'row wrap justify-center items-center content-center'">
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/big-tasty-turbo-queijo.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-              <div :class="$store.state.window.windowWidth < 800 ? 'slide' : 'col-xs-6 col-sm-3 col-md-2'">
-                <img :class="$store.state.window.windowWidth < 800 ? 'img-slide' : 'img-section'" :src="require('../assets/mcdonalds/yourfoodmenu.png')">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="section">
-          <div class="slide">
-            <h3>
-            </h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 3.2</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 3.3</h3>
-          </div>
-        </div>
-        <div class="section">
-          <div class="slide">
-            <h3>Slide 3.1</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 3.2</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 3.3</h3>
-          </div>
-        </div>
-        <div class="section">
-          <div class="slide">
-            <h3>Slide 2.1</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 2.2</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 2.3</h3>
-          </div>
-        </div>
-         <div class="section">
-          <div class="slide">
-            <h3>Slide 2.1</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 2.2</h3>
-          </div>
-          <div class="slide">
-            <h3>Slide 2.3</h3>
-          </div>
-        </div>
-      </full-page>
-    </div>
-  <!-- </q-page> -->
+    </q-page-sticky>
+  </q-page>
 </template>
 
 <script>
+import { debounce } from 'quasar'
+// import btn from '../components/btn'
 export default {
+  components: {
+    // btn
+  },
   data () {
     return {
-      // oi: true,
+      slide: 1,
+      slide2: 1,
+      slide3: 1,
+      lorem: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo provident incidunt ducimus iusto perferendis porro earum. Totam, numquam?',
       options: {
         licenseKey: 'YOUR_KEY_HERE',
-        afterLoad: this.afterLoad,
-        scrollOverflow: true,
-        scrollBar: true,
-        // autoScrolling: false,
+        afterLoad: this.afterResize,
+        scrollOverflow: false,
+        scrollBar: false,
+        // parallax: true,
+        autoScrolling: true,
         menu: '#menu',
         navigation: false,
-        anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
-        sectionsColor: ['#41b883', '#ff5f45', '#0798ec', '#fec401', '#1bcee6', '#ee1a59', '#2c3e4f', '#ba5be9', '#b4b8ab']
-      }
+        anchors: ['page1', 'page2', 'page3', 'page4', 'page5', 'page6', 'page7'],
+        sectionsColor: ['#fec401', '#e80001', '#0798ec', '#ff5f45', '#41b883', '#fec401', '#e80001']
+      },
+      menu3: false,
+      menuOver3: false,
+      listOver3: false,
+      menu4: false,
+      menuOver4: false,
+      listOver4: false,
+      menu5: false,
+      menuOver5: false,
+      listOver5: false,
+      menu6: false,
+      menuOver6: false,
+      listOver6: false,
+      menu7: false,
+      menuOver7: false,
+      listOver7: false
     }
   },
   methods: {
-    moveTo (val) {
-      // if (val2 !== null) {
-      //   this.$refs.fullpage.api.moveTo(val + ',' + val2)
-      // } else {
-      this.$refs.fullpage.api.moveTo(val)
-      // }
+    debounceFunc3: debounce(function () { this.checkMenu3() }, 0),
+    debounceFunc4: debounce(function () { this.checkMenu4() }, 0),
+    debounceFunc5: debounce(function () { this.checkMenu5() }, 0),
+    debounceFunc6: debounce(function () { this.checkMenu6() }, 0),
+    debounceFunc7: debounce(function () { this.checkMenu7() }, 0),
+    checkMenu3 () {
+      if (this.menuOver3 || this.listOver3) {
+        this.menu3 = true
+      } else {
+        this.menu3 = false
+      }
     },
-
-    addSection (e) {
-      e.preventDefault()
-      var newSectionNumber = document.querySelectorAll('.fp-section').length + 1
-
-      // creating the section div
-      var section = document.createElement('div')
-      section.className = 'section'
-      section.innerHTML = `<h3>Section ${newSectionNumber}</h3>`
-
-      // adding section
-      document.querySelector('#fullpage').appendChild(section)
-
-      // creating the section menu element
-      var sectionMenuItem = document.createElement('li')
-      sectionMenuItem.setAttribute('data-menuanchor', 'page' + newSectionNumber)
-      sectionMenuItem.innerHTML = `<a href="#page${newSectionNumber}">Section${newSectionNumber}</a>`
-
-      // adding it to the sections menu
-      var sectionsMenuItems = document.querySelector('#menu')
-      sectionsMenuItems.appendChild(sectionMenuItem)
-
-      // adding anchor for the section
-      this.options.anchors.push(`page${newSectionNumber}`)
-
-      // we have to call `update` manually as DOM changes won't fire updates
-      // requires the use of the attribute ref="fullpage" on the
-      // component element, in this case, <full-page>
-      // ideally, use an ID element for that element too
-      this.$refs.fullpage.build()
+    checkMenu4 () {
+      if (this.menuOver4 || this.listOver4) {
+        this.menu4 = true
+      } else {
+        this.menu4 = false
+      }
     },
-    removeSection () {
-      var sections = document.querySelector('#fullpage').querySelectorAll('.fp-section')
-      var lastSection = sections[sections.length - 1]
-
-      // removing the last section
-      lastSection.parentNode.removeChild(lastSection)
-
-      // removing the last anchor
-      this.options.anchors.pop()
-
-      // removing the last item on the sections menu
-      var sectionsMenuItems = document.querySelectorAll('#menu li')
-      var lastItem = sectionsMenuItems[sectionsMenuItems.length - 1]
-      lastItem.parentNode.removeChild(lastItem)
+    checkMenu5 () {
+      if (this.menuOver5 || this.listOver5) {
+        this.menu5 = true
+      } else {
+        this.menu5 = false
+      }
     },
-
-    addSlide (e) {
-      e.preventDefault()
-      var newSlideNumber = document.querySelectorAll('.fp-slide').length + 1
-
-      // creating the slide div
-      var slide = document.createElement('div')
-      slide.className = 'slide'
-      slide.innerHTML = `<h3>slide ${newSlideNumber}</h3>`
-
-      // adding slide
-      document.querySelector('#fullpageslide').appendChild(slide)
-
-      // creating the slide menu element
-      var slideMenuItem = document.createElement('li')
-      slideMenuItem.setAttribute('data-menuanchor', 'page' + newSlideNumber)
-      slideMenuItem.innerHTML = `<a href="#page${newSlideNumber}">slide${newSlideNumber}</a>`
-
-      // adding it to the slides menu
-      var slidesMenuItems = document.querySelector('#menu')
-      slidesMenuItems.appendChild(slideMenuItem)
-
-      // adding anchor for the slide
-      this.options.anchors.push(`page${newSlideNumber}`)
-
-      // we have to call `update` manually as DOM changes won't fire updates
-      // requires the use of the attribute ref="fullpage" on the
-      // component element, in this case, <full-page>
-      // ideally, use an ID element for that element too
-      this.$refs.fullpage.build()
+    checkMenu6 () {
+      if (this.menuOver6 || this.listOver6) {
+        this.menu6 = true
+      } else {
+        this.menu6 = false
+      }
     },
-    removeSlide () {
-      var slides = document.querySelector('#fullpageslide').querySelectorAll('.fp-slide')
-      var lastSlide = slides[slides.length - 1]
-
-      // removing the last slide
-      lastSlide.parentNode.removeChild(lastSlide)
-
-      // removing the last anchor
-      this.options.anchors.pop()
-
-      // removing the last item on the slides menu
-      var slidesMenuItems = document.querySelectorAll('#menu li')
-      var lastItem = slidesMenuItems[slidesMenuItems.length - 1]
-      lastItem.parentNode.removeChild(lastItem)
+    checkMenu7 () {
+      if (this.menuOver7 || this.listOver7) {
+        this.menu7 = true
+      } else {
+        this.menu7 = false
+      }
+    }
+  },
+  watch: {
+    menuOver3 (val) {
+      this.debounceFunc3()
     },
-
-    toggleNavigation () {
-      this.options.navigation = !this.options.navigation
+    listOver3 (val) {
+      this.debounceFunc3()
     },
-    toggleScrollbar () {
-      console.log('Changing scrollbar...')
-      this.options.scrollBar = !this.options.scrollBar
+    menuOver4 (val) {
+      this.debounceFunc4()
+    },
+    listOver4 (val) {
+      this.debounceFunc4()
+    },
+    menuOver5 (val) {
+      this.debounceFunc5()
+    },
+    listOver5 (val) {
+      this.debounceFunc5()
+    },
+    menuOver6 (val) {
+      this.debounceFunc6()
+    },
+    listOver6 (val) {
+      this.debounceFunc6()
+    },
+    menuOver7 (val) {
+      this.debounceFunc7()
+    },
+    listOver7 (val) {
+      this.debounceFunc7()
     }
   }
 }
 </script>
 
-<style scoped>
-ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+<style lang="stylus">
+button.without-icon i {
+  display: none
+}
+</style>
+
+<style lang="scss" scoped>
+.d-button {
+  font-size: 12.5px;
+  margin: 4px;
+  align-items: center;
+  border-radius: 7px;
+  color: #ffffff;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+  &:hover {
+    animation: rotate 0.7s ease-in-out both;
+    span {
+      animation: storm 0.7s ease-in-out both;
+      animation-delay: 0.06s;
+    }
+  }
 }
 
-li {
-  /* display: inline-block;
-  margin: 0 10px; */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
 }
 
-a {
-  /* color: #ffffff; */
+.btn-pill {
+  &:before, &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #bd0000;//fdf900
+    content: '';
+    opacity: 0;
+    transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+    z-index: -1;
+    transform: translate(100%, -25%) translate3d(0, 0, 0);
+  }
+  &:hover {
+    &:before, &:after {
+      opacity: 0.15;
+      transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+    }
+    &:before {
+      transform: translate3d(50%, 0, 0) scale(0.9);
+    }
+    &:after {
+      transform: translate(50%, 0) scale(1.1);
+    }
+  }
 }
 
-/* .slide::-webkit-scrollbar {
-  width: 0;
-} */
+.btn-slide-line {
+  &.center {
+    &:after {
+      left: 50%;
+    }
+  }
+  &:after {
+    position: absolute;
+    right: 0;
+    left: auto;
+    transition: .3s;
+    content: '';
+    width: 0;
+    bottom: 0;
+    height: 3px;
+    background: #ffe600;
+  }
+  &:hover {
+    cursor: pointer;
+    &:after {
+      width: 100%;
+      left: 0;
+    }
+  }
+}
+
 </style>
