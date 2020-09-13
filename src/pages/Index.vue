@@ -33,118 +33,299 @@
       <li class="actions-button" @click="$refs.fullpage.api.moveTo(2,6)">Página 6
       </li>
     </ul> -->
-    <full-page id="fullpage" ref="fullpage" :options="options">
+    <full-page
+      id="fullpage"
+      ref="fullpage"
+      :options="options"
+    >
       <!-- 1 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="text-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(3,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(3,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(3,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(4,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(4,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big mac.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(4,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/carne/big mac.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(5,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(5,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/frango/mcchicken.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(5,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/frango/extra chicken.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(6,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(6,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(6,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(7,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(7,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/bebidas/mcshake.png')"
+              >
             </div>
           </div>
         </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
             <div class="col-xs-12 col-sm-6">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')"
+              >
             </div>
             <div class="col-xs-12 col-sm-6">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')"
+              >
             </div>
             <div class="col-xs-12 col-sm-6">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')"
+              >
             </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(4,1)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
-            </div>
-          </div>
-        </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
-          <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(4,2)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
-            </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(4,3)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/carne/big mac.png')">
-            </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(5,1)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
-            </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(5,2)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(4,1)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')"
+              >
             </div>
           </div>
         </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(5,3)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(4,2)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')"
+              >
             </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(6,1)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(4,3)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/carne/big mac.png')"
+              >
             </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(6,2)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(5,1)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')"
+              >
             </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(6,3)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(5,2)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/frango/mcchicken.png')"
+              >
             </div>
           </div>
         </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(7,1)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(5,3)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/frango/extra chicken.png')"
+              >
             </div>
-            <div class="col-xs-12 col-sm-6" @click="$refs.fullpage.api.moveTo(7,2)">
-              <img class="selectDisable img-slide-cardapio" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(6,1)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')"
+              >
+            </div>
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(6,2)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')"
+              >
+            </div>
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(6,3)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')"
+              >
+            </div>
+          </div>
+        </div>
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
+          <div class="row wrap justify-center items-center content-center">
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(7,1)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')"
+              >
+            </div>
+            <div
+              class="col-xs-12 col-sm-6"
+              @click="$refs.fullpage.api.moveTo(7,2)"
+            >
+              <img
+                class="selectDisable img-slide-cardapio"
+                :src="require('../assets/mcdonalds/bebidas/mcshake.png')"
+              >
             </div>
           </div>
         </div>
       </div>
       <!-- 2 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="slide text-center">
-          <div class="row wrap justify-center items-center content-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="slide text-center"
+        >
+          <div class="row wrap justify-center items-center content-center selectDisable">
             <div class="col-xs-3 col-sm-3 col-md-3">
               <q-carousel
                 class="q-pb-xl q-px-none"
@@ -155,15 +336,42 @@
                 thumbnails
                 infinite
               >
-                <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')" />
-                <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')" />
-                <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')" />
-                <q-carousel-slide :name="4" :img-src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')" />
-                <q-carousel-slide :name="5" :img-src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')" />
-                <q-carousel-slide :name="6" :img-src="require('../assets/mcdonalds/carne/big mac.png')" />
-                <q-carousel-slide :name="7" :img-src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')" />
-                <q-carousel-slide :name="8" :img-src="require('../assets/mcdonalds/frango/mcchicken.png')" />
-                <q-carousel-slide :name="9" :img-src="require('../assets/mcdonalds/frango/extra chicken.png')" />
+                <q-carousel-slide
+                  :name="1"
+                  :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')"
+                />
+                <q-carousel-slide
+                  :name="2"
+                  :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')"
+                />
+                <q-carousel-slide
+                  :name="3"
+                  :img-src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')"
+                />
+                <q-carousel-slide
+                  :name="4"
+                  :img-src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')"
+                />
+                <q-carousel-slide
+                  :name="5"
+                  :img-src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')"
+                />
+                <q-carousel-slide
+                  :name="6"
+                  :img-src="require('../assets/mcdonalds/carne/big mac.png')"
+                />
+                <q-carousel-slide
+                  :name="7"
+                  :img-src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')"
+                />
+                <q-carousel-slide
+                  :name="8"
+                  :img-src="require('../assets/mcdonalds/frango/mcchicken.png')"
+                />
+                <q-carousel-slide
+                  :name="9"
+                  :img-src="require('../assets/mcdonalds/frango/extra chicken.png')"
+                />
               </q-carousel>
             </div>
             <div class="col-xs-1 col-sm-1 col-md-1">
@@ -178,9 +386,18 @@
                 thumbnails
                 infinite
               >
-                <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')" />
-                <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')" />
-                <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')" />
+                <q-carousel-slide
+                  :name="1"
+                  :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')"
+                />
+                <q-carousel-slide
+                  :name="2"
+                  :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')"
+                />
+                <q-carousel-slide
+                  :name="3"
+                  :img-src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')"
+                />
               </q-carousel>
             </div>
             <div class="col-xs-1 col-sm-1 col-md-1">
@@ -195,13 +412,22 @@
                 thumbnails
                 infinite
               >
-                <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/bebidas/refrigerantes.png')" />
-                <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/bebidas/mcshake.png')" />
+                <q-carousel-slide
+                  :name="1"
+                  :img-src="require('../assets/mcdonalds/bebidas/refrigerantes.png')"
+                />
+                <q-carousel-slide
+                  :name="2"
+                  :img-src="require('../assets/mcdonalds/bebidas/mcshake.png')"
+                />
               </q-carousel>
             </div>
           </div>
         </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
           <q-carousel
             class="q-pb-xl q-px-none q-ma-none"
             style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
@@ -211,18 +437,48 @@
             thumbnails
             infinite
           >
-              <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')" />
-              <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')" />
-              <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')" />
-              <q-carousel-slide :name="4" :img-src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')" />
-              <q-carousel-slide :name="5" :img-src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')" />
-              <q-carousel-slide :name="6" :img-src="require('../assets/mcdonalds/carne/big mac.png')" />
-              <q-carousel-slide :name="7" :img-src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')" />
-              <q-carousel-slide :name="8" :img-src="require('../assets/mcdonalds/frango/mcchicken.png')" />
-              <q-carousel-slide :name="9" :img-src="require('../assets/mcdonalds/frango/extra chicken.png')" />
+            <q-carousel-slide
+              :name="1"
+              :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')"
+            />
+            <q-carousel-slide
+              :name="2"
+              :img-src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')"
+            />
+            <q-carousel-slide
+              :name="3"
+              :img-src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')"
+            />
+            <q-carousel-slide
+              :name="4"
+              :img-src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')"
+            />
+            <q-carousel-slide
+              :name="5"
+              :img-src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')"
+            />
+            <q-carousel-slide
+              :name="6"
+              :img-src="require('../assets/mcdonalds/carne/big mac.png')"
+            />
+            <q-carousel-slide
+              :name="7"
+              :img-src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')"
+            />
+            <q-carousel-slide
+              :name="8"
+              :img-src="require('../assets/mcdonalds/frango/mcchicken.png')"
+            />
+            <q-carousel-slide
+              :name="9"
+              :img-src="require('../assets/mcdonalds/frango/extra chicken.png')"
+            />
           </q-carousel>
         </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
           <q-carousel
             class="q-pb-xl q-px-none q-ma-none"
             style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
@@ -232,12 +488,24 @@
             thumbnails
             infinite
           >
-            <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')" />
-            <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')" />
-            <q-carousel-slide :name="3" :img-src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')" />
+            <q-carousel-slide
+              :name="1"
+              :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')"
+            />
+            <q-carousel-slide
+              :name="2"
+              :img-src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')"
+            />
+            <q-carousel-slide
+              :name="3"
+              :img-src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')"
+            />
           </q-carousel>
         </div>
-        <div v-if="$q.screen.lt.md" class="slide text-center">
+        <div
+          v-if="$q.screen.lt.md"
+          class="slide text-center"
+        >
           <q-carousel
             class="q-pb-xl q-px-none q-ma-none"
             style="background-color: #e80001; border-top-left-radius: 20px; border-top-right-radius: 20px; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;"
@@ -247,133 +515,287 @@
             thumbnails
             infinite
           >
-            <q-carousel-slide :name="1" :img-src="require('../assets/mcdonalds/bebidas/refrigerantes.png')" />
-            <q-carousel-slide :name="2" :img-src="require('../assets/mcdonalds/bebidas/mcshake.png')" />
+            <q-carousel-slide
+              :name="1"
+              :img-src="require('../assets/mcdonalds/bebidas/refrigerantes.png')"
+            />
+            <q-carousel-slide
+              :name="2"
+              :img-src="require('../assets/mcdonalds/bebidas/mcshake.png')"
+            />
           </q-carousel>
         </div>
       </div>
       <!-- 3 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="slide text-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(3,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(3,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(3,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(3,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')"
+              >
             </div>
           </div>
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 1 carne.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/picanha-das-galaxias/picanha clubhouse 2 carnes.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/picanha-das-galaxias/mcpicanha.png')"
+          >
         </div>
       </div>
       <!-- 4 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="slide text-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(4,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(4,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(4,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/carne/big mac.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(4,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/carne/big mac.png')"
+              >
             </div>
           </div>
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/carne/big tasty turbo queijo.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/carne/duplo cheddar mcmelt.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/carne/big mac.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/carne/big mac.png')"
+          >
         </div>
       </div>
       <!-- 5 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="slide text-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(5,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(5,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/frango/mcchicken.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(5,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(5,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/frango/extra chicken.png')"
+              >
             </div>
           </div>
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/frango/chicken supreme crispy.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/frango/mcchicken.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/frango/mcchicken.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/frango/extra chicken.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/frango/extra chicken.png')"
+          >
         </div>
       </div>
       <!-- 6 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="slide text-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(6,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(6,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(6,3)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(6,3)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')"
+              >
             </div>
           </div>
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/acompanhamentos/mcnuggets 4.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/acompanhamentos/mcfritas.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/acompanhamentos/mcfritas cheddar bacon.png')"
+          >
         </div>
       </div>
       <!-- 7 -->
       <div class="section">
-        <div v-if="$q.screen.gt.sm" class="slide text-center">
+        <div
+          v-if="$q.screen.gt.sm"
+          class="slide text-center"
+        >
           <div class="row wrap justify-center items-center content-center">
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,1)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(7,1)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')"
+              >
             </div>
-            <div class="col-xs-4 col-sm-3 col-md-2" @click="$refs.fullpage.api.moveTo(7,2)">
-              <img class="selectDisable img-section" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+            <div
+              class="col-xs-4 col-sm-3 col-md-2"
+              @click="$refs.fullpage.api.moveTo(7,2)"
+            >
+              <img
+                class="selectDisable img-section"
+                :src="require('../assets/mcdonalds/bebidas/mcshake.png')"
+              >
             </div>
           </div>
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/bebidas/refrigerantes.png')"
+          >
         </div>
         <div class="slide text-center">
-          <img class="selectDisable img-slide" :src="require('../assets/mcdonalds/bebidas/mcshake.png')">
+          <img
+            class="selectDisable img-slide"
+            :src="require('../assets/mcdonalds/bebidas/mcshake.png')"
+          >
         </div>
       </div>
     </full-page>
-    <q-page-sticky position="top-right" :offset="[10, 10]">
-      <q-tabs narrow-indicator :breakpoint="0" no-caps>
+    <q-page-sticky
+      position="top-right"
+      :offset="[10, 10]"
+    >
+      <q-tabs
+        narrow-indicator
+        :breakpoint="0"
+        no-caps
+      >
         <!-- btn 1 -->
         <q-btn
           v-if="$q.screen.gt.sm"
@@ -391,7 +813,6 @@
           label="McOferta"
           class="d-button navigation-btn btn-slide-line"
           style="background-color: #bd0000;"
-
         />
         <!-- btn 3 -->
         <q-btn-dropdown
@@ -408,18 +829,30 @@
           ripple
           auto-close
         >
-          <q-list @mouseover.native="listOver3 = true" @mouseout.native="listOver3 = false">
-            <q-item @click="$refs.fullpage.api.moveTo(3,1)" clickable>
+          <q-list
+            @mouseover.native="listOver3 = true"
+            @mouseout.native="listOver3 = false"
+          >
+            <q-item
+              @click="$refs.fullpage.api.moveTo(3,1)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>picanha clubhouse 1 carne</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(3,2)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(3,2)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>picanha clubhouse 2 carnes</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(3,3)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(3,3)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>McPicanha</q-item-label>
               </q-item-section>
@@ -441,18 +874,30 @@
           ripple
           auto-close
         >
-          <q-list @mouseover.native="listOver4 = true" @mouseout.native="listOver4 = false">
-            <q-item @click="$refs.fullpage.api.moveTo(4,1)" clickable>
+          <q-list
+            @mouseover.native="listOver4 = true"
+            @mouseout.native="listOver4 = false"
+          >
+            <q-item
+              @click="$refs.fullpage.api.moveTo(4,1)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>big tasty turbo queijo</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(4,2)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(4,2)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>Duplo Cheddar McMelt</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(4,3)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(4,3)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>Big Mac</q-item-label>
               </q-item-section>
@@ -474,18 +919,30 @@
           ripple
           auto-close
         >
-          <q-list @mouseover.native="listOver5 = true" @mouseout.native="listOver5 = false">
-            <q-item @click="$refs.fullpage.api.moveTo(5,1)" clickable>
+          <q-list
+            @mouseover.native="listOver5 = true"
+            @mouseout.native="listOver5 = false"
+          >
+            <q-item
+              @click="$refs.fullpage.api.moveTo(5,1)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>Chicken Supreme Crispy</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(5,2)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(5,2)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>McChicken</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(5,3)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(5,3)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>Extra Chicken</q-item-label>
               </q-item-section>
@@ -507,18 +964,30 @@
           ripple
           auto-close
         >
-          <q-list @mouseover.native="listOver6 = true" @mouseout.native="listOver6 = false">
-            <q-item @click="$refs.fullpage.api.moveTo(6,1)" clickable>
+          <q-list
+            @mouseover.native="listOver6 = true"
+            @mouseout.native="listOver6 = false"
+          >
+            <q-item
+              @click="$refs.fullpage.api.moveTo(6,1)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>McNuggets</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(6,2)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(6,2)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>McFritas</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(6,3)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(6,3)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>McFritas Cheddar</q-item-label>
               </q-item-section>
@@ -540,13 +1009,22 @@
           ripple
           auto-close
         >
-          <q-list @mouseover.native="listOver7 = true" @mouseout.native="listOver7 = false">
-            <q-item @click="$refs.fullpage.api.moveTo(7,1)" clickable>
+          <q-list
+            @mouseover.native="listOver7 = true"
+            @mouseout.native="listOver7 = false"
+          >
+            <q-item
+              @click="$refs.fullpage.api.moveTo(7,1)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>Refrigerantes</q-item-label>
               </q-item-section>
             </q-item>
-            <q-item @click="$refs.fullpage.api.moveTo(7,2)" clickable>
+            <q-item
+              @click="$refs.fullpage.api.moveTo(7,2)"
+              clickable
+            >
               <q-item-section>
                 <q-item-label>McShacke</q-item-label>
               </q-item-section>
@@ -560,9 +1038,18 @@
           :content-style="{ backgroundColor: '#ff000000' }"
           size="md"
           style="background-color: #bd0000;"
-          push no-caps auto-close dropdown-icon="mdi-menu-down" :loading="loading" label="Páginas"
+          push
+          no-caps
+          auto-close
+          dropdown-icon="mdi-menu-down"
+          :loading="loading"
+          label="Páginas"
         >
-          <q-list flat border="false" class="q-pa-none q-ma-none fit column wrap justify-center">
+          <q-list
+            flat
+            border="false"
+            class="q-pa-none q-ma-none fit column wrap justify-center"
+          >
             <q-item
               @click="$refs.fullpage.api.moveTo(1,0)"
               class="q-pt-xs q-pb-none q-px-none"
@@ -782,7 +1269,7 @@ export default {
 
 <style lang="stylus">
 button.without-icon i {
-  display: none
+  display: none;
 }
 </style>
 
@@ -840,24 +1327,28 @@ button.without-icon i {
 }
 
 .btn-pill {
-  &:before, &:after {
+  &:before,
+  &:after {
     position: absolute;
     right: 0;
     bottom: 0;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: #bd0000;//fdf900
-    content: '';
+    background: #bd0000; //fdf900
+    content: "";
     opacity: 0;
-    transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
+    transition: transform 0.15s cubic-bezier(0.02, 0.01, 0.47, 1),
+      opacity 0.15s cubic-bezier(0.02, 0.01, 0.47, 1);
     z-index: -1;
     transform: translate(100%, -25%) translate3d(0, 0, 0);
   }
   &:hover {
-    &:before, &:after {
+    &:before,
+    &:after {
       opacity: 0.15;
-      transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1), opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
+      transition: transform 0.2s cubic-bezier(0.02, 0.01, 0.47, 1),
+        opacity 0.2s cubic-bezier(0.02, 0.01, 0.47, 1);
     }
     &:before {
       transform: translate3d(50%, 0, 0) scale(0.9);
@@ -878,8 +1369,8 @@ button.without-icon i {
     position: absolute;
     right: 0;
     left: auto;
-    transition: .3s;
-    content: '';
+    transition: 0.3s;
+    content: "";
     width: 0;
     bottom: 0;
     height: 3px;
@@ -893,5 +1384,4 @@ button.without-icon i {
     }
   }
 }
-
 </style>
