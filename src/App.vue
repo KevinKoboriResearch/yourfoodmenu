@@ -105,7 +105,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .containerSizeTransition {
-  transition: width .3s, height .3s;
+  transition: width 0.3s, height 0.3s;
 }
 
 .selectDisable {

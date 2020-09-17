@@ -266,7 +266,7 @@
             </div>
             <div
               class="col-xs-12 col-sm-6"
-              @click="$refs.fullpage.api.moveTo(6,1)"
+              @click="$refs.fullpage.api.moveTo(6,0)"
             >
               <img
                 class="selectDisable img-slide-cardapio"
@@ -275,7 +275,7 @@
             </div>
             <div
               class="col-xs-12 col-sm-6"
-              @click="$refs.fullpage.api.moveTo(6,2)"
+              @click="$refs.fullpage.api.moveTo(6,1)"
             >
               <img
                 class="selectDisable img-slide-cardapio"
@@ -284,7 +284,7 @@
             </div>
             <div
               class="col-xs-12 col-sm-6"
-              @click="$refs.fullpage.api.moveTo(6,3)"
+              @click="$refs.fullpage.api.moveTo(6,2)"
             >
               <img
                 class="selectDisable img-slide-cardapio"
@@ -325,7 +325,10 @@
           v-if="$q.screen.gt.sm"
           class="slide text-center"
         >
-          <div class="row wrap justify-center items-center content-center selectDisable">
+          <div
+            class="row wrap justify-center items-center content-center selectDisable"
+            style="scrollbar-color: green;"
+          >
             <div class="col-xs-3 col-sm-3 col-md-3">
               <q-carousel
                 class="q-pb-xl q-px-none"
@@ -1035,7 +1038,7 @@
         <q-btn-dropdown
           v-if="$q.screen.lt.md"
           class="q-py-xs q-px-none text-white"
-          :content-style="{ backgroundColor: '#ff000000' }"
+          :content-style="{ backgroundColor: '#fec401' }"
           size="md"
           style="background-color: #bd0000;"
           push
@@ -1043,15 +1046,15 @@
           auto-close
           dropdown-icon="mdi-menu-down"
           :loading="loading"
-          label="Páginas"
+          :label="pageName"
         >
           <q-list
             flat
             border="false"
-            class="q-pa-none q-ma-none fit column wrap justify-center"
+            class="q-px-xs q-ma-none fit column wrap justify-center"
           >
             <q-item
-              @click="$refs.fullpage.api.moveTo(1,0)"
+              @click="pageName = 'Cardápio', $refs.fullpage.api.moveTo(1,0)"
               class="q-pt-xs q-pb-none q-px-none"
               clickable
             >
@@ -1064,7 +1067,7 @@
               />
             </q-item>
             <q-item
-              @click="$refs.fullpage.api.moveTo(2,0)"
+              @click="pageName = 'McOferta', $refs.fullpage.api.moveTo(2,0)"
               class="q-pt-xs q-pb-none q-px-none"
               clickable
             >
@@ -1077,7 +1080,7 @@
               />
             </q-item>
             <q-item
-              @click="$refs.fullpage.api.moveTo(3,0)"
+              @click="pageName = 'Picanha das Galáxias', $refs.fullpage.api.moveTo(3,0)"
               class="q-pt-xs q-pb-none q-px-none"
               clickable
             >
@@ -1090,7 +1093,7 @@
               />
             </q-item>
             <q-item
-              @click="$refs.fullpage.api.moveTo(4,0)"
+              @click="pageName = 'Sanuíches de Carne', $refs.fullpage.api.moveTo(4,0)"
               class="q-pt-xs q-pb-none q-px-none"
               clickable
             >
@@ -1103,7 +1106,7 @@
               />
             </q-item>
             <q-item
-              @click="$refs.fullpage.api.moveTo(5,0)"
+              @click="pageName = 'Sanduíches de Frango', $refs.fullpage.api.moveTo(5,0)"
               class="q-pt-xs q-pb-none q-px-none"
               clickable
             >
@@ -1116,7 +1119,7 @@
               />
             </q-item>
             <q-item
-              @click="$refs.fullpage.api.moveTo(6,0)"
+              @click="pageName = 'Acompanhamentos', $refs.fullpage.api.moveTo(6,0)"
               class="q-pt-xs q-pb-none q-px-none"
               clickable
             >
@@ -1129,8 +1132,8 @@
               />
             </q-item>
             <q-item
-              @click="$refs.fullpage.api.moveTo(7,0)"
-              class="q-pt-xs q-pb-none q-px-none"
+              @click="pageName = 'Bebidas', $refs.fullpage.api.moveTo(7,0)"
+              class="q-pt-xs q-pb-xs q-px-none"
               clickable
             >
               <q-btn
@@ -1187,7 +1190,8 @@ export default {
       listOver6: false,
       menu7: false,
       menuOver7: false,
-      listOver7: false
+      listOver7: false,
+      pageName: 'Cardápio'
     }
   },
   methods: {
